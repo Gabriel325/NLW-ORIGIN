@@ -50,7 +50,9 @@ h1 {
 }
 
 nav {
+  height: 4.5rem;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
