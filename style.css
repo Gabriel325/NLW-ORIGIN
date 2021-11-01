@@ -4,8 +4,18 @@
   box-sizing: border-box;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
 #header {
   height: 4.5rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
 }
 
 .logo {
