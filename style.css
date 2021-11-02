@@ -33,6 +33,10 @@ img {
 }
 
 /******** BASE **********************/
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font: 400 1rem 'DM Sans', sans-serif;
   color: var(--text-color);
@@ -112,6 +116,9 @@ body {
   z-index: 100;
   background: var(--body-color);
 }
+#header.scroll {
+  box-shadow: 0px 0px 12px 0 rgba(0, 0, 0, 0.2);
+}
 main {
   margin-top: var(--header-height);
 }
@@ -164,6 +171,12 @@ nav ul li a:hover::after {
 nav .menu {
   opacity: 0;
   visibility: hidden;
+  top: -20rem;
+  transition: 0.2s;
+}
+
+nav .menu ul {
+  display: none;
 }
 
 /*======== MOSTRAR MENU ===========*/
@@ -178,13 +191,13 @@ nav.show .menu {
   position: fixed;
   top: 0;
   left: 0;
-}
-
-nav.show .menu {
   display: grid;
   place-content: center;
 }
 
+nav.show .menu ul {
+  display: grid;
+}
 nav.show ul.grid {
   gap: 4rem;
 }
@@ -202,7 +215,9 @@ nav .icon-close {
   visibility: hidden;
   opacity: 0;
 
-  /* Transicao Bacana*/
+  top: -1.5rem;
+
+  transition: 0.2s;
 }
 
 nav.show .icon-menu {
@@ -212,6 +227,7 @@ nav.show .icon-menu {
 nav.show .icon-close {
   visibility: visible;
   opacity: 1;
+  top: 1.5rem;
 }
 
 /*======== HOME =======================*/
@@ -296,3 +312,24 @@ nav.show .icon-close {
 }
 
 /*======== SERVICES =======================*/
+.cards.grid {
+  gap: 1.5rem;
+}
+.card {
+  padding: 3.625rem 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 0.25rem solid var(--base-color);
+  border-radius: 0.25rem 0.25rem 0 0;
+  text-align: center;
+}
+.card i {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 5rem;
+  color: var(--base-color);
+}
+
+.card .title {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
