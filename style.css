@@ -442,3 +442,8 @@ footer i {
 footer .social a {
   margin-right: 2rem;
 }
+
+/********* backt-to-top *******************/
+.back-to-top {
+  background: var(--base-color);
+}
