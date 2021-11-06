@@ -163,7 +163,8 @@ nav ul li a {
   transition: color 0.2s;
   position: relative;
 }
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
   color: var(--base-color);
 }
 nav ul li a::after {
@@ -178,7 +179,8 @@ nav ul li a::after {
   transition: width 0.2s;
 }
 
-nav ul li a:hover::after {
+nav ul li a:hover::after,
+nav ul li a.active::after {
   width: 100%;
 }
 
@@ -242,6 +244,11 @@ nav.show .icon-close {
   visibility: visible;
   opacity: 1;
   top: 1.5rem;
+}
+
+nav ul li a.active {
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
 }
 
 /*======== HOME =======================*/
@@ -529,6 +536,7 @@ footer .social a:hover {
 
   nav .menu ul li a.title {
     font: 400 1rem var(--body-font);
+    -webkit-font-smoothing: antialiased;
   }
   nav .icon-menu {
     display: none;
