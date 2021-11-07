@@ -17,11 +17,9 @@ for (var link of links) {
 }
 
 /* Mudar o header da pagina quando der scroll */
-
+const header = document.querySelector('#header')
+const navHeight = header.offsetHeight
 function changeHeaderWhenScroll() {
-  const header = document.querySelector('#header')
-  const navHeight = header.offsetHeight
-
   if (window.scrollY >= navHeight) {
     /*Scroll maior que a altura do header */
     header.classList.add('scroll')
@@ -38,7 +36,13 @@ const swiper = new Swiper('.swiper', {
     el: '.swiper-pagination'
   },
   mousewheel: true,
-  keyboard: true
+  keyboard: true,
+  breakpoints: {
+    767: {
+      slidesPerView: 2,
+      setWrapperSize: true
+    }
+  }
 })
 
 /* Scrollreveal: Carregar elementos quando der scroll na pagina */
@@ -57,8 +61,8 @@ scrollReveal.reveal(
 )
 
 /* Botão voltar para o top */
+const backToTopButton = document.querySelector('.back-to-top')
 function backToTop() {
-  const backToTopButton = document.querySelector('.back-to-top')
   window.addEventListener('scroll', function () {
     if (window.scrollY >= 560) {
       backToTopButton.classList.add('show')
@@ -68,8 +72,33 @@ function backToTop() {
   })
 }
 
+/* Menu ativo de acordo com seção na página*/
+const sections = document.querySelectorAll('main section[id]')
+function activeMenuAtCurrentSection() {
+  const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4
+  for (const section of sections) {
+    const sectionTop = section.offsetTop
+    const sectionHeight = section.offsetHeight
+    const sectionId = section.getAttribute('id')
+
+    const checkpointStart = checkpoint >= sectionTop
+    const checkpointEnd = checkpoint <= sectionTop + sectionHeight
+
+    if (checkpointStart && checkpointEnd) {
+      document
+        .querySelector('nav ul li a[href*=' + sectionId + ']')
+        .classList.add('active')
+    } else {
+      document
+        .querySelector('nav ul li a[href*=' + sectionId + ']')
+        .classList.remove('active')
+    }
+  }
+}
+
 /*When to scroll*/
 window.addEventListener('scroll', function () {
   changeHeaderWhenScroll()
   backToTop()
+  activeMenuAtCurrentSection()
 })
