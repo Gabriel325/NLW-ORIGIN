@@ -103,7 +103,7 @@ window.addEventListener('scroll', function () {
   activeMenuAtCurrentSection()
 })
 
-/* Função Altera tema para escuro e para claro de volta*/
+/* Função altera tema para escuro e para claro de volta*/
 /* Botão de trocar de tema */
 const themes = document.querySelectorAll('.theme')
 const themeButton = document.querySelector('#theme')
