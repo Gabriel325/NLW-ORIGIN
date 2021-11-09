@@ -499,6 +499,46 @@ footer .social a:hover {
   transform: translate(0);
 }
 
+/* THEME */
+i.theme {
+  position: fixed;
+  right: 0rem;
+  bottom: 10rem;
+
+  padding: 1.5rem;
+  clip-path: circle();
+  cursor: pointer;
+
+  font-size: 2.5rem;
+  line-height: 0;
+
+  transition: 0.3s;
+  transform: translateY(100%);
+}
+
+.icon-sun {
+  background: var(--base-color);
+  color: var(--text-color-light);
+}
+
+.icon-moon {
+  background: var(--base-color-second);
+  color: var(--base-color);
+}
+
+#theme.off .icon-moon,
+#theme .icon-sun {
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+#theme .icon-moon,
+#theme.off .icon-sun {
+  visibility: visible;
+  opacity: 1;
+}
+
 /* Responsivo *
 /* extra large devices: 1200 > */
 @media (min-width: 1200px) {

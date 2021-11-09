@@ -102,3 +102,13 @@ window.addEventListener('scroll', function () {
   backToTop()
   activeMenuAtCurrentSection()
 })
+
+/* Altera tema para escuro*/
+const themes = document.querySelectorAll('.theme')
+const themeButton = document.querySelector('#theme')
+
+for (const theme of themes) {
+  theme.addEventListener('click', function () {
+    themeButton.classList.toggle('off')
+  })
+}
