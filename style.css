@@ -39,6 +39,7 @@ img {
   --subtitle-font-size: 1rem;
   --title-font: 'Poppins', sans-serif;
   --body-font: 'DM Sans', sans-serif;
+  transition: 0.3s;
 }
 
 /******** BASE **********************/
@@ -118,7 +119,7 @@ body {
 }
 
 #header {
-  border-bottom: 1px solid #e4e4e4;
+  border-bottom: 1px solid var(--body-color);
   margin-bottom: 2rem;
   display: flex;
 

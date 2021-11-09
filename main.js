@@ -143,7 +143,7 @@ for (const theme of themes) {
       )
       document.documentElement.style.setProperty(
         '--shadow-color',
-        'rgba(255, 255, 255, 0.08)'
+        'rgba(255, 255, 255, 0.1)'
       )
       document.documentElement.style.setProperty(
         '--swiper-pagination-bullet-inactive-color',
