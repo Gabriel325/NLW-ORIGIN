@@ -102,3 +102,52 @@ window.addEventListener('scroll', function () {
   backToTop()
   activeMenuAtCurrentSection()
 })
+
+/* Altera tema para escuro*/
+const themes = document.querySelectorAll('.theme')
+const themeButton = document.querySelector('#theme')
+console.log(themeButton)
+for (const theme of themes) {
+  theme.addEventListener('click', function () {
+    themeButton.classList.toggle('off')
+    if (themeButton.classList.contains('off')) {
+      document.documentElement.style.setProperty(
+        '--body-color',
+        'hsl(0 0% 98%)'
+      )
+      document.documentElement.style.setProperty(
+        '--title-color',
+        ' hsl(var(--hue) 41% 10%)'
+      )
+      document.documentElement.style.setProperty(
+        '--body-color-white',
+        'hsl(0 0% 100%)'
+      )
+      document.documentElement.style.setProperty(
+        '--shadow-color',
+        'rgba(0, 0, 0, 0.08)'
+      )
+    } else {
+      document.documentElement.style.setProperty(
+        '--body-color',
+        'hsl(0 0% 10%)'
+      )
+      document.documentElement.style.setProperty(
+        '--title-color',
+        ' hsl(var(--hue) 41% 100%)'
+      )
+      document.documentElement.style.setProperty(
+        '--body-color-white',
+        'hsl(0 0% 0%)'
+      )
+      document.documentElement.style.setProperty(
+        '--shadow-color',
+        'rgba(255, 255, 255, 0.08)'
+      )
+      document.documentElement.style.setProperty(
+        '--swiper-pagination-bullet-inactive-color',
+        '#fff'
+      )
+    }
+  })
+}
